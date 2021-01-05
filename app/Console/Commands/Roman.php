@@ -25,7 +25,7 @@ class Roman extends Command
     if ($calculate == 'calculate'){
         $resultRomans = ConsoleHelper::convertToArabian($x,$y,$operator);
 
-        $this->info(ConsoleHelper::convertToRoman($resultRomans) . '('.$resultRomans.')');
+        $this->info(ConsoleHelper::convertToRoman($resultRomans) . "($resultRomans)");
     }else{
         $this->error('Неверные значения');
     }
