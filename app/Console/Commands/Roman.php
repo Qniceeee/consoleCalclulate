@@ -22,13 +22,13 @@ class Roman extends Command
         $x = $arguments['x'];
         $y = $arguments['y'];
         $operator = $arguments['operator'];
-if ($calculate == 'calculate'){
-    $resultRomans = ConsoleHelper::convertToArabian($x,$y,$operator);
+    if ($calculate == 'calculate'){
+        $resultRomans = ConsoleHelper::convertToArabian($x,$y,$operator);
 
-    $this->info(ConsoleHelper::convertToRoman($resultRomans) . '('. $resultRomans.')');
-}else{
-    $this->error('Неверные значения');
-}
+        $this->info(ConsoleHelper::convertToRoman($resultRomans) . '('.$resultRomans.')');
+    }else{
+        $this->error('Неверные значения');
+    }
 
 
     }
