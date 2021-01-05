@@ -12,8 +12,30 @@ class Roman extends Command
      *
      * @var string
      */
-    protected $signature = 'console';
+    protected $signature = 'console {calculate} {x} {operator}{y}';
 
+    public function handle()
+    {
+        $arguments = $this->arguments();
+         $x = $arguments['x'];
+         $y = $arguments['y'];
+         $operator = $arguments['operator'];
+         $calculate = $arguments['calculate'];
+         if ($calculate == 'calculate')
+         {
+             if ($operator == '+')
+             {
+                 $this->info($x + $y);
+             }if ($operator == '-')
+             {
+                 $this->info($x - $y);
+             }
+         }
+         else
+         {
+             $this->error('Неверная команда');
+         }
+    }
     /**
      * The console command description.
      *
@@ -36,9 +58,6 @@ class Roman extends Command
      *
      * @return int
      */
-    public function handle()
-    {
-       $this->info('all ok we go');
-    }
+
 
     }
